@@ -50,10 +50,6 @@ app.delete("/api/notes/:id", function (req, res) {
     notesData = notesData.filter(function (note) {
       return newObj.id != req.params.id;
     });
-    notesData = JSON.stringify(notesData);
-    fs.writeFile("./db/db.json", notesData, "utf8", function (err) {
-      if (err) throw err;
-    });
   } catch (err) {
     throw err;
     console.log(err);
